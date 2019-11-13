@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+
+{%block title%}
+App Encuesta
+{%endblock%}
+
+{% block content %}
+<div class="container" style="padding-top: 50px;">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>Nombre del encuestado</td>
+                <td>Edad</td>
+                <td>Respuesta #1</td>
+                <td>Respuesta #2</td>
+                <td>Respuesta #3</td>
+                <td>Respuesta #4</td>
+                <td>Respuesta #5</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% if object_list %}
+            {% for encuesta in object_list %}
+            <tr>
+                <td>{{ encuesta.name_user }}</td>
+                <td>{{ encuesta.age }}</td>
+                <td>{{ encuesta.pregunta_1 }}</td>
+                <td>{{ encuesta.pregunta_2 }}</td>
+                <td>{{ encuesta.pregunta_3 }}</td>
+                <td>{{ encuesta.pregunta_4 }}</td>
+                <td>{{ encuesta.pregunta_5 }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{% url 'preguntas:editar_encuestas' encuesta.id %}">Editar</a>
+                    <a class="btn btn-danger" href="{% url 'preguntas:eliminar_encuestas' encuesta.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+            {% else %}
+            <h1>NO EXISTEN ENCUESTAS CREADAS</h1>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+
+{%endblock%}

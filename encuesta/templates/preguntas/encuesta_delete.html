@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="container">
+    <form method="post">
+        {%csrf_token%}
+        <div class="container">
+            <h3 style="padding-top: 50px; padding-left: 200px;">¿Desea eliminar el registro de {{object.name_user}}?
+            </h3>
+            <div class="container" style="padding-top: 50px; padding-left: 200px;" >
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <a class="btn btn-primary" href="{% url 'preguntas:listar_encuestas'%}">Cancelar</a>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

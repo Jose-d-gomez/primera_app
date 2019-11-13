@@ -1,0 +1,64 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="container" style="padding-top: 50px; padding-left: 250px;">
+    <div class="abs-center">
+        <fieldset class="form-group">
+            <legend>
+                <h2>Rellene los campos</h2>
+            </legend>
+            <form method="post">
+                {%csrf_token%}
+                <!-- {{ form.as_p }} -->
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-goup">
+                            <label for="">{{form.name_user.label}}</label>
+                            {{form.name_user}}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-goup">
+                            <label for="">{{form.age.label}}</label>
+                            {{form.age}}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-goup">
+                            <label for="">{{form.pregunta_1.label}}</label>
+                            {{form.pregunta_1}}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-goup">
+                            <label for="">{{form.pregunta_2.label}}</label>
+                            {{form.pregunta_2}}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-goup">
+                            <label for="">{{form.pregunta_3.label}}</label>
+                            {{form.pregunta_3}}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-goup">
+                            <label for="">{{form.pregunta_4.label}}</label>
+                            {{form.pregunta_4}}
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-goup">
+                            <label for="">{{form.pregunta_5.label}}</label>
+                            {{form.pregunta_5}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 20px; padding-left: 15px;">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</div>
+{% endblock %}
